@@ -1,0 +1,222 @@
+
+Transcript. Use arrow keys to navigate between transcript entries.
+
+
+Search
+
+AI-generated content may be incorrect
+
+Jim Freeman started transcription
+
+Peter Hogg
+0 minutes 3 seconds0:03
+Peter Hogg 0 minutes 3 seconds
+Bendy, you really want to work with.
+Peter Hogg 0 minutes 6 seconds
+Because they don't know anything about you. So from a client perspective, they really they don't even know your birthday unless you actually reach out and tell them they have no idea. They don't keep any information. They have no frequent flyer programme.
+
+Jim Freeman
+0 minutes 19 seconds0:19
+Jim Freeman 0 minutes 19 seconds
+Hmm.
+
+Peter Hogg
+0 minutes 25 seconds0:25
+Peter Hogg 0 minutes 25 seconds
+Programmes they've outsourced all of that to Qantas, so they really, apart from your address and maybe a phone number, anything you need to know, they have no information apart from.
+Peter Hogg 0 minutes 38 seconds
+What you paid for your bills?
+Peter Hogg 0 minutes 42 seconds
+So they are.
+Peter Hogg 0 minutes 46 seconds
+Quite limited in the amount of information available, except for the fact that they know how much you paid for your energy bill. Pretty much to every 15 minutes, which is an incredible trove of information.
+
+RIMA YAMMOUNI
+0 minutes 54 seconds0:54
+RIMA YAMMOUNI 0 minutes 54 seconds
+Yeah.
+
+Jim Freeman
+0 minutes 59 seconds0:59
+Jim Freeman 0 minutes 59 seconds
+Mm-hmm.
+
+Peter Hogg
+1 minute 3 seconds1:03
+Peter Hogg 1 minute 3 seconds
+And what we talked about was mining that and actually creating customer classifications based on that data. So that then they can say yes, we know nothing about you, but Gee, you look like you've got school age kids.
+
+Jim Freeman
+1 minute 12 seconds1:12
+Jim Freeman 1 minute 12 seconds
+You soon as well.
+Jim Freeman 1 minute 14 seconds
+Hmm.
+
+Peter Hogg
+1 minute 21 seconds1:21
+Peter Hogg 1 minute 21 seconds
+Because at 3:30 you arrive home and suddenly the power spikes up, so you know there's if you know exactly how much energy somebody's consuming every 15 minutes, there's a huge amount of data, numerical data there. And they are keeping all that data in a.
+Peter Hogg 1 minute 40 seconds
+In Google and they're not doing much with it at the moment because it's basically just used to create their energy reports and they create those reports and then they say go. So that was the mine of numeric data. It is their single largest data source because it is absolutely huge, as you can imagine.
+Peter Hogg 1 minute 59 seconds
+And I think they've got 5 million customers and they've got a data point for every 15 minutes for the last five years, 10 years, they've got lots. So there's lots of information there from a machine learning perspective to go and crunch and turn into.
+Peter Hogg 2 minutes 18 seconds
+Very obvious customer patterns when.
+
+Jim Freeman
+2 minutes 21 seconds2:21
+Jim Freeman 2 minutes 21 seconds
+Did you talk to them about that, Peter?
+
+Peter Hogg
+2 minutes 23 seconds2:23
+Peter Hogg 2 minutes 23 seconds
+That was the number one proposal we were making with an analytics platform is the fact that given the fact that they insist on storing no data about their customers, this was the way they had of actually producing some customer data.
+
+Jim Freeman
+2 minutes 37 seconds2:37
+Jim Freeman 2 minutes 37 seconds
+OK, good.
+
+Peter Hogg
+2 minutes 37 seconds2:37
+Peter Hogg 2 minutes 37 seconds
+Because they honestly, Jim, they know your address and they send you a bill. And if you pay it, they know whether you pay it or not. That's kind of what they know. I know because we went in and looked at their databases. They know nothing much else.
+
+Jim Freeman
+2 minutes 45 seconds2:45
+Jim Freeman 2 minutes 45 seconds
+Mm-hmm.
+
+Peter Hogg
+2 minutes 53 seconds2:53
+Peter Hogg 2 minutes 53 seconds
+So.
+
+RIMA YAMMOUNI
+2 minutes 53 seconds2:53
+RIMA YAMMOUNI 2 minutes 53 seconds
+That's by design too, right? They really don't want to have to deal with SPI at all.
+
+Peter Hogg
+2 minutes 55 seconds2:55
+Peter Hogg 2 minutes 55 seconds
+Oh.
+Peter Hogg 2 minutes 59 seconds
+Don't get me wrong, Arima, I love them as as as somebody I would buy my energy from. They're exactly the people I want to work with for somebody I'm trying to sell AI capability to not so fun.
+
+RIMA YAMMOUNI
+3 minutes 1 second3:01
+RIMA YAMMOUNI 3 minutes 1 second
+Yeah, yeah, yeah.
+
+Jim Freeman
+3 minutes 12 seconds3:12
+Jim Freeman 3 minutes 12 seconds
+Yeah, yeah.
+
+Peter Hogg
+3 minutes 14 seconds3:14
+Peter Hogg 3 minutes 14 seconds
+So the other thing that they have tried doing a gentic AI on is their knowledge base. So they got a company in who did a knowledge base and their call centre knowledge base and they have tried to.
+
+Jim Freeman
+3 minutes 23 seconds3:23
+Jim Freeman 3 minutes 23 seconds
+You know.
+
+Peter Hogg
+3 minutes 29 seconds3:29
+Peter Hogg 3 minutes 29 seconds
+Do that, and apart from the fact that it recommended they called the police and a few other things.
+Peter Hogg 3 minutes 37 seconds
+They are suffering data quality issues on their knowledge base because like all of us, what they write in a knowledge base was designed for another person to read who knew something about what was going on and they'll be acronyms and they will be.
+Peter Hogg 3 minutes 52 seconds
+Shortenings and there will be all sorts of stuff in there that makes it difficult to read, and so therefore there's a lack.
+Peter Hogg 4 minutes 4 seconds
+He was giving them weird results when they were trying to do generative AI in order to find answers to problems.
+
+Jim Freeman
+4 minutes 8 seconds4:08
+Jim Freeman 4 minutes 8 seconds
+Hmm.
+
+Peter Hogg
+4 minutes 16 seconds4:16
+Peter Hogg 4 minutes 16 seconds
+So they're two data sources, one of which they don't use because they once they've figured out the bill, they don't look at that information anymore. And the second one, which is their real knowledge base, they is of insufficient quality.
+Peter Hogg 4 minutes 33 seconds
+Now the one thing that they were looking to do was they have transcripts of all of their phone calls, which they keep. So that one was definitely there.
+
+Jim Freeman
+4 minutes 41 seconds4:41
+Jim Freeman 4 minutes 41 seconds
+Hmm.
+
+Peter Hogg
+4 minutes 49 seconds4:49
+Peter Hogg 4 minutes 49 seconds
+To again potentially extract metadata from. However, remember that they are not a company that wants to keep any data that they don't need to keep. So the question is why are they? You know, when you call up it says this might be used for training or.
+
+Jim Freeman
+4 minutes 55 seconds4:55
+Jim Freeman 4 minutes 55 seconds
+Mm-hmm.
+
+Peter Hogg
+5 minutes 8 seconds5:08
+Peter Hogg 5 minutes 8 seconds
+Something other purpose. It doesn't say all the collection of metadata about you and anything you mentioned. So there is issues with recordings as a data source because it contains all sorts of data which they.
+
+Jim Freeman
+5 minutes 13 seconds5:13
+Jim Freeman 5 minutes 13 seconds
+Yeah.
+
+Peter Hogg
+5 minutes 24 seconds5:24
+Peter Hogg 5 minutes 24 seconds
+Don't have permission.
+Peter Hogg 5 minutes 26 seconds
+To actually access in order to profile their customers.
+
+Jim Freeman
+5 minutes 31 seconds5:31
+Jim Freeman 5 minutes 31 seconds
+Right.
+
+Peter Hogg
+5 minutes 32 seconds5:32
+Peter Hogg 5 minutes 32 seconds
+So.
+Peter Hogg 5 minutes 34 seconds
+They're very exciting because they've got nothing, but they're very difficult because most of the things that you would want to offer them.
+Peter Hogg 5 minutes 47 seconds
+Are not there.
+Peter Hogg 5 minutes 51 seconds
+So the question is, as I said, they've tried AI on the call centre. They haven't tried any machine learning on the the energy data, the rest of their database honestly apart from.
+Peter Hogg 6 minutes 7 seconds
+You know, Robo debt, a bill management thing.
+Peter Hogg 6 minutes 14 seconds
+I don't know what there would be.
+
+Jim Freeman
+6 minutes 15 seconds6:15
+Jim Freeman 6 minutes 15 seconds
+What did you send to them and why didn't did it go anywhere or it stalled? Or what happened?
+
+Peter Hogg
+6 minutes 22 seconds6:22
+Peter Hogg 6 minutes 22 seconds
+We presented an analytics platform in Google bringing through key data so that they could actually start to do this. And they said that's fantastic. We should figure out what we're doing with data governance and there's a project which is on hold because snowy's getting their data governance.
+
+Jim Freeman
+6 minutes 25 seconds6:25
+Jim Freeman 6 minutes 25 seconds
+Mm-hmm.
+
+Peter Hogg
+6 minutes 38 seconds6:38
+Peter Hogg 6 minutes 38 seconds
+Under plan because the aim would be that you have the same data governance and then they can use that for this analytics platform. So they've got a whole bunch of architectural decisions that which is the document we sent to we provided for them about their platform and what they should do and it was all designed to support these.
