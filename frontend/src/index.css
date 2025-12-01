@@ -3,116 +3,302 @@
 @tailwind utilities;
 
 :root {
-  --color-energy-red: #E63946;
-  --color-energy-orange: #F77F00;
-  --color-energy-yellow: #FCBF49;
-  --color-energy-green: #2A9D8F;
-  --color-energy-blue: #264653;
+  /* Apple-inspired color palette */
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  --apple-green: #34c759;
+  --apple-orange: #ff9500;
+  --apple-red: #ff3b30;
+  --apple-purple: #af52de;
+  --apple-teal: #5ac8fa;
+  
+  /* Light theme backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --bg-tertiary: #e8e8ed;
+  
+  /* Text colors */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #a1a1a6;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #0d1117;
-  color: #e6edf3;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Apple style light */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a2332;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #384766;
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4a5f85;
+  background: rgba(0, 0, 0, 0.25);
 }
 
-/* Utility classes */
+/* Apple-inspired utility classes */
 @layer components {
-  .card {
-    @apply bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 p-6;
+  .apple-card {
+    @apply rounded-2xl p-6;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
   }
   
-  .card-hover {
-    @apply card transition-all duration-300 hover:border-slate-600 hover:bg-slate-800/70;
+  .apple-card-elevated {
+    @apply apple-card;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   }
   
-  .stat-card {
-    @apply card relative overflow-hidden;
+  .apple-stat-card {
+    @apply apple-card transition-all duration-300;
   }
   
-  .stat-card::before {
-    content: '';
-    @apply absolute top-0 left-0 w-1 h-full;
-  }
-  
-  .stat-card-red::before {
-    @apply bg-energy-red;
-  }
-  
-  .stat-card-orange::before {
-    @apply bg-energy-orange;
-  }
-  
-  .stat-card-green::before {
-    @apply bg-energy-green;
-  }
-  
-  .stat-card-blue::before {
-    @apply bg-energy-blue;
+  .apple-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
   
   .btn-primary {
-    @apply px-4 py-2 bg-energy-red hover:bg-energy-red-dark text-white font-medium rounded-lg transition-colors duration-200;
+    @apply px-5 py-2.5 font-medium rounded-full transition-all duration-200;
+    background: var(--apple-blue);
+    color: white;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+  
+  .btn-primary:hover {
+    background: var(--apple-blue-hover);
+    transform: scale(1.02);
   }
   
   .btn-secondary {
-    @apply px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white font-medium rounded-lg transition-colors duration-200;
+    @apply px-5 py-2.5 font-medium rounded-full transition-all duration-200;
+    background: #f5f5f7;
+    color: var(--text-primary);
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+  
+  .btn-secondary:hover {
+    background: #e8e8ed;
   }
   
   .input-field {
-    @apply w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-energy-red focus:ring-1 focus:ring-energy-red;
+    @apply w-full px-4 py-3 rounded-xl focus:outline-none transition-all duration-200;
+    background: #f5f5f7;
+    border: 1px solid transparent;
+    color: var(--text-primary);
+    font-size: 15px;
+  }
+  
+  .input-field::placeholder {
+    color: var(--text-tertiary);
+  }
+  
+  .input-field:focus {
+    background: #ffffff;
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
   }
   
   .table-header {
-    @apply text-left text-xs font-semibold text-slate-400 uppercase tracking-wider;
+    @apply text-left text-xs font-semibold uppercase tracking-wider;
+    color: var(--text-tertiary);
   }
   
   .table-cell {
-    @apply px-4 py-3 text-sm text-slate-300;
+    @apply px-4 py-4 text-sm;
+    color: var(--text-secondary);
+  }
+  
+  /* Legacy compatibility */
+  .card {
+    @apply apple-card;
+  }
+  
+  .stat-card {
+    @apply apple-stat-card;
+  }
+  
+  .stat-card-red, .stat-card-orange, .stat-card-green, .stat-card-blue {
+    @apply apple-stat-card;
   }
 }
 
-/* Animations */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
+/* Typography */
+.headline-large {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+.headline-medium {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.headline-small {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.body-large {
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.body-text {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Animations - Apple style */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  50% {
-    box-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Grid pattern background */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.15s; opacity: 0; }
+.delay-3 { animation-delay: 0.2s; opacity: 0; }
+.delay-4 { animation-delay: 0.25s; opacity: 0; }
+.delay-5 { animation-delay: 0.3s; opacity: 0; }
+.delay-6 { animation-delay: 0.35s; opacity: 0; }
+
+/* Subtle background */
+.apple-bg {
+  background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+}
+
+/* Pill badge */
+.pill-badge {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  background: #f5f5f7;
+  color: var(--text-secondary);
+}
+
+.pill-badge-blue {
+  background: rgba(0, 113, 227, 0.1);
+  color: var(--apple-blue);
+}
+
+.pill-badge-green {
+  background: rgba(52, 199, 89, 0.1);
+  color: var(--apple-green);
+}
+
+.pill-badge-orange {
+  background: rgba(255, 149, 0, 0.1);
+  color: #c77700;
+}
+
+.pill-badge-red {
+  background: rgba(255, 59, 48, 0.1);
+  color: var(--apple-red);
+}
+
+/* Number display */
+.metric-value {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+/* Grid pattern - removed for clean Apple look */
 .grid-pattern {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background: transparent;
 }
 
+/* Progress bar */
+.apple-progress {
+  @apply h-2 rounded-full overflow-hidden;
+  background: #f5f5f7;
+}
+
+.apple-progress-fill {
+  @apply h-full rounded-full transition-all duration-700;
+}
+
+/* Divider */
+.apple-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+}

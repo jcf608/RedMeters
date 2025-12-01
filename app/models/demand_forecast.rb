@@ -35,3 +35,4 @@ class DemandForecast < ApplicationRecord
     actual_demand_mw >= confidence_lower && actual_demand_mw <= confidence_upper
   end
 end
+

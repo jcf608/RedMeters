@@ -19,3 +19,4 @@ class CreateMeterReadings < ActiveRecord::Migration[7.2]
     add_foreign_key :meter_readings, :smart_meters, column: :meter_id
   end
 end
+

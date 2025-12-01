@@ -30,9 +30,9 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen bg-slate-950 grid-pattern">
+    <div className="flex h-screen bg-white">
       <Sidebar currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto bg-[#fbfbfd]">
         <div className="p-8">
           {renderPage()}
         </div>
@@ -40,4 +40,3 @@ export default function App() {
     </div>
   )
 }
-

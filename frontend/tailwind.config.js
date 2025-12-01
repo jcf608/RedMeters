@@ -7,40 +7,57 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Energy-themed color palette
-        'energy-red': '#E63946',
-        'energy-red-dark': '#C1121F',
-        'energy-orange': '#F77F00',
-        'energy-yellow': '#FCBF49',
-        'energy-green': '#2A9D8F',
-        'energy-blue': '#264653',
+        // Apple-inspired color palette
+        'apple-blue': '#0071e3',
+        'apple-blue-hover': '#0077ed',
+        'apple-green': '#34c759',
+        'apple-orange': '#ff9500',
+        'apple-red': '#ff3b30',
+        'apple-purple': '#af52de',
+        'apple-teal': '#5ac8fa',
         
-        // UI colors
-        'slate-850': '#1a2332',
-        'slate-950': '#0d1117',
+        // Legacy energy colors (for compatibility)
+        'energy-red': '#ff3b30',
+        'energy-red-dark': '#d32f2f',
+        'energy-orange': '#ff9500',
+        'energy-yellow': '#ffcc00',
+        'energy-green': '#34c759',
+        'energy-blue': '#0071e3',
       },
       fontFamily: {
-        'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'monospace'],
+        'sans': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'sans-serif'],
+        'display': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'],
+        'mono': ['SF Mono', 'Menlo', 'monospace'],
+      },
+      borderRadius: {
+        'xl': '12px',
+        '2xl': '16px',
+        '3xl': '24px',
       },
       animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'fade-in': 'fadeIn 0.3s ease-out',
-        'slide-in': 'slideIn 0.3s ease-out',
+        'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'scale-in': 'scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slide-up': 'slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'spin': 'spin 1s linear infinite',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        slideIn: {
-          '0%': { transform: 'translateX(-10px)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
     },
   },
   plugins: [],
 }
-

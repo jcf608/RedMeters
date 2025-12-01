@@ -50,3 +50,4 @@ class RedMetersAPI < Sinatra::Base
          })
   end
 end
+

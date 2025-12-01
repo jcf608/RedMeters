@@ -47,3 +47,4 @@ class SmartMeter < ApplicationRecord
     readings.where('reading_time > ?', period.ago).average(:consumption_kwh)
   end
 end
+

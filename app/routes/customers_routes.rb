@@ -45,3 +45,4 @@ class RedMetersAPI < Sinatra::Base
     json customer.to_api_response
   end
 end
+

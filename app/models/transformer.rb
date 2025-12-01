@@ -51,3 +51,4 @@ class Transformer < ApplicationRecord
     ((total_demand / capacity_kva) * 100).round(2)
   end
 end
+

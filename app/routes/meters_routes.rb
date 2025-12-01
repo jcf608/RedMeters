@@ -61,3 +61,4 @@ class RedMetersAPI < Sinatra::Base
     from_date..to_date
   end
 end
+

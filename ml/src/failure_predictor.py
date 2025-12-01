@@ -216,3 +216,4 @@ if __name__ == '__main__':
     high_risk = sum(1 for r in results['risk_level'] if r in ['high', 'critical'])
     print(f"   High/Critical risk transformers: {high_risk}/{len(transformers)}")
 
+

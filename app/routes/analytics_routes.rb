@@ -102,3 +102,4 @@ class RedMetersAPI < Sinatra::Base
     (anomalies.to_f / readings.count * 100).round(2)
   end
 end
+

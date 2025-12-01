@@ -55,3 +55,4 @@ class Customer < ApplicationRecord
                 .sum('meter_readings.consumption_kwh')
   end
 end
+

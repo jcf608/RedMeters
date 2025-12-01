@@ -206,3 +206,4 @@ if __name__ == '__main__':
     print(f"   Peak hour: {peak_hour}:00 ({max(profile['average_demand_kw']):.2f} kW)")
     print(f"   Lowest hour: {min_hour}:00 ({min(profile['average_demand_kw']):.2f} kW)")
 
+

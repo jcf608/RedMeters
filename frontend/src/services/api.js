@@ -3,7 +3,16 @@
  * Centralized API client for all backend communication
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:4568'
+// VITE_API_URL must be set - no fallbacks per PRINCIPLES.md
+const API_BASE = import.meta.env.VITE_API_URL
+
+if (!API_BASE) {
+  throw new Error(
+    'VITE_API_URL environment variable is not set. ' +
+    'Create frontend/.env with: VITE_API_URL=http://localhost:4567 ' +
+    'Or run: ./start_red_meters.rb which configures this automatically.'
+  )
+}
 
 class APIError extends Error {
   constructor(message, status, data) {
@@ -104,4 +113,5 @@ export const api = {
 
 export { APIError }
 export default api
+
 

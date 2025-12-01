@@ -120,3 +120,4 @@ puts "   Customers: #{Customer.count}"
 puts "   Smart Meters: #{SmartMeter.count}"
 puts "   Meter Readings: #{MeterReading.count}"
 puts "   Alerts: #{Alert.count}"
+

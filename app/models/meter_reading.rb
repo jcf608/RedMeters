@@ -38,3 +38,4 @@ class MeterReading < ApplicationRecord
     ((voltage - 230).abs / 230.0 * 100).round(2)
   end
 end
+

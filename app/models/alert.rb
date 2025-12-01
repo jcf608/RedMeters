@@ -50,3 +50,4 @@ class Alert < ApplicationRecord
     end
   end
 end
+

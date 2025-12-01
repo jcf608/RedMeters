@@ -41,3 +41,4 @@ class Prediction < ApplicationRecord
     probability && probability > 0.7
   end
 end
+

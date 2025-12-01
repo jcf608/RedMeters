@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About RedMeters | Smart Grid Analytics</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --energy-red: #ef4444;
+            --energy-orange: #f97316;
+            --blue-400: #60a5fa;
+            --blue-500: #3b82f6;
+            --emerald-400: #34d399;
+            --emerald-500: #10b981;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --amber-400: #fbbf24;
+            --amber-500: #f59e0b;
+            --rose-400: #fb7185;
+            --rose-500: #f43f5e;
+            --indigo-400: #818cf8;
+            --indigo-500: #6366f1;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .space-y-8 > * + * {
+            margin-top: 32px;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 24px;
+        }
+
+        .space-y-3 > * + * {
+            margin-top: 12px;
+        }
+
+        /* Header */
+        .page-header h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Vision Card */
+        .vision-card {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(249, 115, 22, 0.1));
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .vision-card .content {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-box.red {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .icon-box.blue {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .icon-box.emerald {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .icon-box.purple {
+            background: rgba(168, 85, 247, 0.2);
+        }
+
+        .icon-box.amber {
+            background: rgba(245, 158, 11, 0.2);
+        }
+
+        .icon-box.rose {
+            background: rgba(244, 63, 94, 0.2);
+        }
+
+        .icon-box.indigo {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .icon-box-sm {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon-sm {
+            width: 20px;
+            height: 20px;
+        }
+
+        .vision-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .vision-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--slate-800);
+        }
+
+        .info-card .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .info-card h3 {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 12px;
+        }
+
+        .info-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bullet {
+            margin-top: 4px;
+        }
+
+        .bullet.rose {
+            color: var(--rose-400);
+        }
+
+        .bullet.emerald {
+            color: var(--emerald-400);
+        }
+
+        /* Capabilities */
+        .capability-item {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .capability-item .label {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 4px;
+        }
+
+        .capability-item .desc {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        /* Origin Story Card */
+        .origin-card {
+            background: linear-gradient(135deg, var(--slate-900), var(--slate-800));
+            border-radius: 16px;
+            border: 1px solid var(--slate-700);
+            overflow: hidden;
+        }
+
+        .origin-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--slate-700);
+        }
+
+        .origin-header .content {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .origin-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .origin-header p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--indigo-400);
+            font-weight: 500;
+        }
+
+        /* Transcript Section */
+        .transcript-section {
+            padding: 24px;
+        }
+
+        .transcript-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 16px;
+            padding: 0;
+        }
+
+        .transcript-toggle h3 {
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        .transcript-toggle:hover h3 {
+            color: var(--indigo-400);
+        }
+
+        .transcript-toggle svg {
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .transcript-toggle:hover svg {
+            color: var(--indigo-400);
+        }
+
+        .transcript-content {
+            display: none;
+        }
+
+        .transcript-content.expanded {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .transcript-hint {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Transcript Items */
+        .transcript-item {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .transcript-item h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .transcript-item h4.indigo { color: var(--indigo-400); }
+        .transcript-item h4.emerald { color: var(--emerald-400); }
+        .transcript-item h4.amber { color: var(--amber-400); }
+        .transcript-item h4.blue { color: var(--blue-400); }
+
+        .transcript-item p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .transcript-item p:last-child {
+            margin-bottom: 0;
+        }
+
+        .speaker {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Path Forward */
+        .path-forward {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .path-forward h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--indigo-400);
+            margin-bottom: 12px;
+        }
+
+        .path-forward p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* SVG Icons */
+        .svg-icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="space-y-8">
+            <!-- Header -->
+            <div class="page-header">
+                <h1>About RedMeters</h1>
+                <p>Intelligent Smart Meter Analytics Platform</p>
+            </div>
+
+            <!-- Vision Statement -->
+            <div class="vision-card">
+                <div class="content">
+                    <div class="icon-box red">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Project Vision</h2>
+                        <p>RedMeters transforms raw smart meter data into actionable customer intelligence. Energy retailers collect vast amounts of consumption data—readings every 15 minutes for millions of customers—yet this incredible data trove often sits unused beyond basic billing. Our platform unlocks this potential.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Insights Grid -->
+            <div class="grid-2">
+                <!-- The Data Opportunity -->
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm blue">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                            </svg>
+                        </div>
+                        <h3>The Data Opportunity</h3>
+                    </div>
+                    <p>Energy companies know exactly how much power each customer consumes every 15 minutes—a massive numerical dataset spanning years. This represents one of the largest untapped data sources in the utility sector, often stored but rarely mined for insights.</p>
+                </div>
+
+                <!-- Customer Intelligence -->
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm emerald">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Customer Intelligence</h3>
+                    </div>
+                    <p>Without collecting personal data, consumption patterns reveal customer profiles. Power spikes at 3:30 PM? Likely school-age children arriving home. Machine learning can identify clear customer segments from pure numerical patterns, enabling personalized services while respecting privacy.</p>
+                </div>
+
+                <!-- ML-Powered Analytics -->
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm purple">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+                            </svg>
+                        </div>
+                        <h3>ML-Powered Analytics</h3>
+                    </div>
+                    <p>Our platform applies machine learning to energy consumption data, crunching millions of data points to uncover patterns invisible to traditional analysis. From demand forecasting to anomaly detection, AI transforms raw readings into business intelligence.</p>
+                </div>
+
+                <!-- Agentic Ecosystem -->
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm amber">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="16" y="16" width="6" height="6" rx="1"/>
+                                <rect x="2" y="16" width="6" height="6" rx="1"/>
+                                <rect x="9" y="2" width="6" height="6" rx="1"/>
+                                <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/>
+                                <path d="M12 12V8"/>
+                            </svg>
+                        </div>
+                        <h3>Agentic Ecosystem</h3>
+                    </div>
+                    <p>Beyond standalone analytics, the platform vision extends to an agentic ecosystem—where intelligent systems work together across departments and partners. Identified issues can automatically package up actionable recommendations, streamlining workflows from detection to resolution.</p>
+                </div>
+            </div>
+
+            <!-- The Challenge & Solution -->
+            <div class="grid-2">
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm rose">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>The Challenge</h3>
+                    </div>
+                    <ul>
+                        <li><span class="bullet rose">•</span><span>Energy retailers often store minimal customer data by design—just address and payment status</span></li>
+                        <li><span class="bullet rose">•</span><span>Massive smart meter datasets sit unused beyond billing calculations</span></li>
+                        <li><span class="bullet rose">•</span><span>Knowledge bases suffer from data quality issues when AI is applied</span></li>
+                        <li><span class="bullet rose">•</span><span>Privacy constraints limit use of call recordings and personal data</span></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="header">
+                        <div class="icon-box icon-box-sm emerald">
+                            <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                                <path d="M9 18h6"/>
+                                <path d="M10 22h4"/>
+                            </svg>
+                        </div>
+                        <h3>Our Solution</h3>
+                    </div>
+                    <ul>
+                        <li><span class="bullet emerald">•</span><span>Extract customer intelligence from consumption patterns without PII</span></li>
+                        <li><span class="bullet emerald">•</span><span>Apply ML models to identify customer segments and predict behavior</span></li>
+                        <li><span class="bullet emerald">•</span><span>Detect anomalies and predict equipment failures proactively</span></li>
+                        <li><span class="bullet emerald">•</span><span>Build an ecosystem where insights flow seamlessly to action</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Platform Capabilities -->
+            <div class="info-card">
+                <div class="header">
+                    <div class="icon-box icon-box-sm blue">
+                        <svg class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                            <polyline points="16 7 22 7 22 13"/>
+                        </svg>
+                    </div>
+                    <h3>Platform Capabilities</h3>
+                </div>
+                <div class="grid-4">
+                    <div class="capability-item">
+                        <div class="label">Customer Segmentation</div>
+                        <div class="desc">ML-based profiling</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="label">Demand Forecasting</div>
+                        <div class="desc">Predictive modeling</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="label">Anomaly Detection</div>
+                        <div class="desc">Real-time alerts</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="label">Failure Prediction</div>
+                        <div class="desc">Proactive maintenance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Origin Story & Transcript Card -->
+            <div class="origin-card">
+                <!-- Introduction Header -->
+                <div class="origin-header">
+                    <div class="content">
+                        <div class="icon-box indigo">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                <path d="M13 8H7"/>
+                                <path d="M17 12H7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2>The Origin Story</h2>
+                            <p>This application was born from a brainstorming session between <span class="highlight">Peter Hogg</span>, <span class="highlight">Rima Yammouni</span>, and <span class="highlight">Jim Freeman</span>. During this discussion, the team explored the untapped potential of smart meter data and identified a significant opportunity to transform raw energy consumption readings into meaningful customer intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transcript Section -->
+                <div class="transcript-section">
+                    <button class="transcript-toggle" onclick="toggleTranscript()">
+                        <h3>Meeting Transcript Summary</h3>
+                        <svg id="chevron-down" class="icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                        <svg id="chevron-up" class="icon-sm" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="18 15 12 9 6 15"/>
+                        </svg>
+                    </button>
+
+                    <div id="transcript-content" class="transcript-content">
+                        <div class="space-y-6">
+                            <!-- Privacy-First Approach -->
+                            <div class="transcript-item">
+                                <h4 class="indigo">Privacy-First Approach</h4>
+                                <div class="space-y-3">
+                                    <p><span class="speaker">Peter Hogg:</span> "From a customer perspective, they've taken a deliberate privacy-first approach. They've strategically partnered with Qantas for loyalty programmes, keeping their own data footprint minimal."</p>
+                                    <p><span class="speaker">Rima Yammouni:</span> "That's by design, right? They've made a conscious decision to minimise PII handling—which is actually a very forward-thinking approach to data privacy."</p>
+                                </div>
+                            </div>
+
+                            <!-- The Rich Data Asset -->
+                            <div class="transcript-item">
+                                <h4 class="emerald">The Rich Data Asset</h4>
+                                <div class="space-y-3">
+                                    <p><span class="speaker">Peter Hogg:</span> "What's remarkable is the energy consumption data they've collected—readings every 15 minutes. This is an incredible trove of information with enormous untapped potential."</p>
+                                    <p>"What we discussed was mining that data to create customer classifications. For example, if power consumption spikes at 3:30 PM, that pattern suggests school-age children arriving home. There's a huge opportunity here."</p>
+                                </div>
+                            </div>
+
+                            <!-- The Scale & Opportunity -->
+                            <div class="transcript-item">
+                                <h4 class="amber">The Scale & Opportunity</h4>
+                                <div class="space-y-3">
+                                    <p><span class="speaker">Peter Hogg:</span> "They've built an impressive data foundation—around 5 million customers with data points every 15 minutes spanning 5-10 years. From a machine learning perspective, this represents an extraordinary opportunity to uncover customer patterns."</p>
+                                    <p>"This is their single largest data source—absolutely massive in scale. The opportunity now is to unlock additional value beyond the current billing and reporting use cases."</p>
+                                </div>
+                            </div>
+
+                            <!-- The Vision -->
+                            <div class="transcript-item">
+                                <h4 class="blue">The Vision</h4>
+                                <div class="space-y-3">
+                                    <p><span class="speaker">Peter Hogg:</span> "Our proposal centered on an analytics platform that respects their privacy-first philosophy. By analysing consumption patterns rather than personal data, we can help them understand their customers while maintaining their principled approach."</p>
+                                    <p><span class="speaker">Jim Freeman:</span> "What was their response to the proposal?"</p>
+                                    <p><span class="speaker">Peter Hogg:</span> "They were very receptive. They said, 'That's fantastic'—and wisely noted they wanted to establish their data governance framework first. They're taking a thoughtful, structured approach to this opportunity."</p>
+                                </div>
+                            </div>
+
+                            <!-- The Path Forward -->
+                            <div class="path-forward">
+                                <h4>The Path Forward</h4>
+                                <p>This brainstorming session crystallized the vision for RedMeters: a platform that extracts customer intelligence from consumption patterns while honouring the client's privacy-first philosophy. By applying machine learning to their impressive smart meter data asset, we can help unlock new insights while respecting both customer privacy and the client's principled approach to data stewardship.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="transcript-hint" class="transcript-hint">Click to expand the full meeting transcript summary...</p>
+                </div>
+            </div>
+
+            <!-- Footer Note -->
+            <div class="footer">
+                <p>Built on insights from stakeholder discussions • Powered by Kyndryl</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTranscript() {
+            const content = document.getElementById('transcript-content');
+            const hint = document.getElementById('transcript-hint');
+            const chevronDown = document.getElementById('chevron-down');
+            const chevronUp = document.getElementById('chevron-up');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                hint.style.display = 'block';
+                chevronDown.style.display = 'block';
+                chevronUp.style.display = 'none';
+            } else {
+                content.classList.add('expanded');
+                hint.style.display = 'none';
+                chevronDown.style.display = 'none';
+                chevronUp.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

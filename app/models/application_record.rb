@@ -8,3 +8,4 @@ class ApplicationRecord < ActiveRecord::Base
     as_json(options)
   end
 end
+
